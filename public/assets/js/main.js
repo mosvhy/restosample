@@ -60,8 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!section) return;
 
     navbarlink.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
+      if (document.querySelector('.mobile-nav-active') && typeof mobileNavToogle === 'function') {
         mobileNavToogle();
+      }
+      if (document.querySelector('body').classList.contains('mobile-nav-active')) {
+        document.querySelector('body').classList.toggle('mobile-nav-active');
+        document.querySelector('.mobile-nav-show').classList.toggle('d-none');
+        document.querySelector('.mobile-nav-hide').classList.toggle('d-none');
       }
     });
 
@@ -188,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * Initiate glightbox
      */
     const glightbox = GLightbox({
-      selector: '.glightbox'
+      selector: '.glightbox',
+      loop: true,
     });
      /**
    * Initiate pURE cOUNTER

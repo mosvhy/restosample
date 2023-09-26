@@ -7,8 +7,12 @@
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #ce1212;
-  --color-secondary: #37373f;
+  --color-primary: #E2725B;
+  --color-secondary: #8B0000;
+  --color-terracotta: #E2725B;
+  --color-dark-red: #8B0000;
+  --bgcolor-default: #530C33;
+  --bgcolor-white: #FFFFFF;
 }
 
 /* Smooth scroll behavior */
@@ -48,7 +52,7 @@ h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .section-bg {
@@ -233,7 +237,8 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  background: #fff;
+/*  background: #fff;*/
+  background: var(--bgcolor-default);
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
@@ -244,6 +249,9 @@ section {
   .header {
     height: 70px;
   }
+  .header img {
+    max-height: 69px !important;
+  }
 }
 
 .header.sticked {
@@ -252,8 +260,10 @@ section {
 }
 
 .header .logo img {
-  max-height: 40px;
+/*  max-height: 40px;*/
+  max-height: 89px;
   margin-right: 6px;
+  transition: all 0.5s;
 }
 
 .header .logo h1 {
@@ -292,7 +302,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 997px) {
   .navbar {
     padding: 0;
   }
@@ -323,7 +333,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: white;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -360,7 +370,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #000;
+    color: var(--color-primary);
   }
 
   .navbar .dropdown ul {
@@ -420,7 +430,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1366px) {
+@media (min-width: 997px) and (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
@@ -430,7 +440,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 997px) {
 
   .mobile-nav-show,
   .mobile-nav-hide {
@@ -441,7 +451,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 996px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -514,7 +524,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -524,7 +534,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -773,7 +783,7 @@ section {
 # Stats Counter Section
 --------------------------------------------------------------*/
 .stats-counter {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stats-bg.jpg") center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/stats-bg.png") center center;
   background-size: cover;
   padding: 100px 0;
 }
@@ -905,6 +915,42 @@ section {
   font-weight: 700;
   color: var(--color-primary);
 }
+
+.gallery-grid button {
+  background: var(--color-primary);
+  border: 0;
+  padding: 14px 60px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.menu .tab-content .menu-item,
+.gallery-grid .tab-content .menu-item {
+  margin: 1px 0px;
+  padding: 0px 1px;
+}
+
+.menu .tab-content .menu-item .menu-img,
+.gallery-grid .tab-content .menu-item .menu-img {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/*@media (max-width: 640px) {
+  .gallery-grid .tab-content .menu-item {
+    margin: 3px 0px;
+    padding: 0px 3px;
+  }
+}
+
+@media (max-width: 575px) {
+  .gallery-grid .tab-content .menu-item {
+    margin: 1px 0px;
+    padding: 0px 1px;
+  }
+}*/
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1557,7 +1603,8 @@ section {
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background-color: #1f1f24;
+  background-color: var(--bgcolor-default);
+/*  background-color: #1f1f24;*/
   padding: 50px 0;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1640,4 +1687,23 @@ section {
 
 .footer .credits a {
   color: #fff;
+}
+
+.gslide-title {
+  margin: 5px auto !important;
+  color: var(--color-primary) !important;
+  font-family: var(--font-secondary) !important;
+  font-size: 24px !important;
+  font-weight: bolder !important;
+}
+.gslide-price {
+  color: var(--color-secondary) !important;
+}
+.glightbox-mobile .glightbox-container .gslide-desc {
+  color: var(--color-default);
+}
+
+.glightbox-mobile .glightbox-container .gslide-description {
+  background: rgba(255,255,255,.9);
+  padding: 0px auto;
 }
